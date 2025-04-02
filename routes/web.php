@@ -5,16 +5,36 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\OperacionesBasicas;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
+
+
+Route::controller(PostController::class)->group(function(){
+    Route::get('/posts', 'index')->name('posts.index');
+    Route::get('/posts/create', 'create')->name('posts.create');
+    Route::post('/posts/store', 'store')->name('posts.store');
+    Route::get('/posts/show', 'show')->name('posts.show');
+});
+
+//Route::get('/posts/4', 'show')->name('posts.show');
+
+//Route::view('mostrar', 'display',['message' => '<p>Este es un parrafo</p>'])->name('display'); //nombre a la vista
+//Route::view('incluir', 'incluir');
+//Route::get('/directivas', [UserController::class, 'index'])->name('user.index');
+//
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
 
 
 //forma mas sencilla porque se llama al controlador
-Route::get('/',[CursoController::class,'getName'])->name('home');
+//Route::get('/',[CursoController::class,'getName'])->name('home');
 
 //EJERCICIOS DE TAREA
-Route:: get('/suma/{x}/{y}', [OperacionesBasicas::class,'sumar'])->name('plus');
+/*Route:: get('/suma/{x}/{y}', [OperacionesBasicas::class,'sumar'])->name('plus');
 Route::get('/resta/{x}/{y}', [OperacionesBasicas::class,'restar'])->name('resta');
 Route::get('/multipicacion/{x}/{y}', [OperacionesBasicas::class,'multiplicar'])->name('multiplicar');
-Route::get('/division/{x}/{y}', [OperacionesBasicas::class,'dividir'])->name('dividir');
+Route::get('/division/{x}/{y}', [OperacionesBasicas::class,'dividir'])->name('dividir');*/
 
 //NOTAS
 /*Route::get('/', function () {
@@ -42,3 +62,11 @@ if($request->route()->named('hola')){
 }
 })->name('verificar');*/
 
+
+
+//VISTAS
+
+/*Route::view('ejemplo', 'example', ['name' => 'Juan'])->name('example');
+
+
+Route::get('curso', [CursoController::class,'index'])->name('curso.index');*/

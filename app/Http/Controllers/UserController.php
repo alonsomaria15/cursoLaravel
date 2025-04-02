@@ -11,7 +11,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+       $num = 7;
+       $data = '';
+       return view('directives', compact('num','data'));
     }
 
     /**
