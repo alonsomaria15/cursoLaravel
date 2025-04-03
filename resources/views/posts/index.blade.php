@@ -14,7 +14,10 @@
     @endempty
     @foreach($posts as $item)
         <li>
-            <a href="/posts/{{ $item['id'] }}">{{ $item['titulo'] }} - {{$item['contenido']}} </a>
+            <a href="{{ route('posts.show', ['id' => $item['id']]) }}">{{ $item['titulo'] }}</a>
+
+
         </li>
     @endforeach
+    
 @endsection

@@ -13,10 +13,10 @@ Route::controller(PostController::class)->group(function(){
     Route::get('/posts', 'index')->name('posts.index');
     Route::get('/posts/create', 'create')->name('posts.create');
     Route::post('/posts/store', 'store')->name('posts.store');
-    Route::get('/posts/show', 'show')->name('posts.show');
+    Route::get('/posts/{id}', 'show')->name('posts.show');
 });
 
-//Route::get('/posts/4', 'show')->name('posts.show');
+//Route::get('/posts/{$id}', 'show')->name('posts.show');
 
 //Route::view('mostrar', 'display',['message' => '<p>Este es un parrafo</p>'])->name('display'); //nombre a la vista
 //Route::view('incluir', 'incluir');

@@ -48,7 +48,7 @@ return view('posts.create');
         $posts = session()->get('posts', []);
         $post = collect($posts)->firstWhere('id', $id);
         return view('posts.show', [
-            'posts' => $post
+            'post' => $post
         ]);
     }
 }
