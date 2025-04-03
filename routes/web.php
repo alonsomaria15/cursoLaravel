@@ -9,12 +9,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 
 
-Route::controller(PostController::class)->group(function(){
+
+//Tarea 2
+/*Route::controller(PostController::class)->group(function(){
     Route::get('/posts', 'index')->name('posts.index');
     Route::get('/posts/create', 'create')->name('posts.create');
     Route::post('/posts/store', 'store')->name('posts.store');
     Route::get('/posts/{id}', 'show')->name('posts.show');
-});
+});*/
 
 //Route::get('/posts/{$id}', 'show')->name('posts.show');
 
