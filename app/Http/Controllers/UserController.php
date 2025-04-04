@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -13,8 +14,10 @@ class UserController extends Controller
     {
        $num = 7;
        $data = '';
-       return view('directives', compact('num','data'));
+       return view('directives', compact('num','data','names'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -62,5 +65,12 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function data()
+    {
+        $users = DB::select('select * from users;');
+       // $user = DB::table('users')->get();
+        dd($users);
     }
 }

@@ -9,6 +9,12 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 
 
+//Clase Migraciones
+Route::get('/', function () {
+    return view('welcome', ['name'=> 'Juan']);
+})->name('welcome');
+
+Route::get('/datos', [UserController::class, 'data']);
 
 //Tarea 2
 /*Route::controller(PostController::class)->group(function(){
